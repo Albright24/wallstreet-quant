@@ -209,3 +209,14 @@ finally: engine.close()
 
 if __name__=="__main__":
     unittest.main()
+
+def setUpModule():
+    global _provider_env
+    _provider_env = patch.dict(os.environ, {
+        "WQ_AI_PROVIDER": "openai",
+        "WQ_MODEL": "test-fixture-model"
+    })
+    _provider_env.start()
+
+def tearDownModule():
+    _provider_env.stop()
