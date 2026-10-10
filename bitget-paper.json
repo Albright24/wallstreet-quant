@@ -1,0 +1,13 @@
+{
+  "symbols": ["RNVDAUSDT", "RTSLAUSDT", "RAAPLUSDT", "RMSFTUSDT", "RAMZNUSDT"],
+  "initial_cash": "10000",
+  "position_cap": "0.10",
+  "exposure_cap": "0.30",
+  "realized_loss_cap": "0.02",
+  "minimum_confidence": "0.75",
+  "maximum_spread": "0.005",
+  "fee_rate": "0.001",
+  "slippage_rate": "0.0005",
+  "event_age_seconds": 900,
+  "quote_age_seconds": 15
+}

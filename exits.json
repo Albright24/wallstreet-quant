@@ -1,0 +1,5 @@
+{
+  "stop_loss": "0.02",
+  "take_profit": "0.04",
+  "max_hold_seconds": 14400
+}

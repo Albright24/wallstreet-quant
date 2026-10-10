@@ -1,0 +1,67 @@
+{
+  "reviewed_on": "2026-10-06",
+  "reader_status": "implemented; live authorization and validation pending",
+  "channels": {
+    "marketfeed": {
+      "enabled": true,
+      "collect": true,
+      "review": "Public preview reviewed; claims remain unverified"
+    },
+    "earnings_season_america": {
+      "enabled": false,
+      "review": "Telegram page not independently verified"
+    },
+    "spx_daily_america": {
+      "enabled": false,
+      "review": "Telegram page not independently verified"
+    },
+    "mag7_concentration_us": {
+      "enabled": false,
+      "review": "Telegram page not independently verified"
+    },
+    "fed_minutes_equity_us": {
+      "enabled": false,
+      "review": "Telegram page not independently verified"
+    },
+    "nasdaq_open_brief_us": {
+      "enabled": false,
+      "review": "Telegram page not independently verified"
+    },
+    "semi_equity_usa": {
+      "enabled": false,
+      "review": "Telegram page not independently verified"
+    },
+    "futures_premarket_us": {
+      "enabled": false,
+      "review": "Telegram page not independently verified"
+    },
+    "news_finance": {
+      "enabled": false,
+      "review": "Public preview observed; current activity not established"
+    },
+    "earnings_pulse": {
+      "enabled": false,
+      "review": "Public preview observed; predominantly Indian equities, outside US scope"
+    },
+    "firstsquaw": {
+      "enabled": true,
+      "collect": true,
+      "review": "Public preview reviewed; claims remain unverified"
+    },
+    "forexnews": {
+      "enabled": true,
+      "collect": true,
+      "review": "Public preview reviewed; claims remain unverified"
+    },
+    "financialtimesjournal": {
+      "enabled": true,
+      "collect": true,
+      "review": "Public preview reviewed; claims remain unverified"
+    },
+    "techcrunchcom": {
+      "enabled": true,
+      "collect": true,
+      "review": "Public preview reviewed; claims remain unverified"
+    }
+  }
+}

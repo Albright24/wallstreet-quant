@@ -1,0 +1,156 @@
+{
+  "label": "SYNTHETIC MONITOR AND MOCK TELEGRAM DEMO. NO EXTERNAL REQUESTS.",
+  "entry": {
+    "mode": "LOCAL_PAPER",
+    "event_key": "248f0b002fe684d5c803069c56e8d9e6f875ddb928f1ab2d9972d995602f1639",
+    "processed_at": "2026-10-06T11:37:40.898748+00:00",
+    "event": {
+      "source": "fixture",
+      "id": "entry",
+      "revision": "1",
+      "symbol": "DEMO_EQUITY",
+      "published_at": "2026-10-06T11:37:40.898725+00:00",
+      "verified": true,
+      "synthetic": true,
+      "url": "https://example.com/fixture"
+    },
+    "decision": {
+      "action": "enter",
+      "confidence": ".9",
+      "notional": "500",
+      "rationale": "Synthetic worker test"
+    },
+    "quote": {
+      "symbol": "DEMO_EQUITY",
+      "observed_at": "2026-10-06T11:37:40.898742+00:00",
+      "bid": "100",
+      "ask": "100.1",
+      "bid_size": "1000",
+      "ask_size": "1000",
+      "source": "synthetic_fixture",
+      "synthetic": true
+    },
+    "status": "filled",
+    "cash_before": "10000",
+    "fill": {
+      "timestamp": "2026-10-06T11:37:40.898748+00:00",
+      "instrument": "DEMO_EQUITY",
+      "direction": "buy",
+      "price": "100.15005",
+      "quantity": "4.987521",
+      "fee": "0.49950047752605",
+      "realized_pnl": "0"
+    },
+    "reason": "Paper risk checks passed",
+    "cash_after": "9500.00002199642395",
+    "balance_change": "-499.99997800357605",
+    "realized_pnl_total": "0"
+  },
+  "exit_checks": [
+    {
+      "symbol": "DEMO_EQUITY",
+      "position_id": "c4e9bc9b8f014dea994306891cb22031",
+      "status": "filled",
+      "net_liquidation_value": "473.1040101647475",
+      "return_fraction": "-0.0537919380441176486210912055",
+      "held_seconds": 0.000503,
+      "checked_at": "2026-10-06T11:37:40.899251+00:00",
+      "trigger": "stop_loss",
+      "execution": {
+        "mode": "LOCAL_PAPER",
+        "event_key": "b4c98a589427b84611c77d69b14d2559840bb87121ed4188248e4e3c3d182215",
+        "processed_at": "2026-10-06T11:37:40.899251+00:00",
+        "event": {
+          "source": "fixed_exit_monitor",
+          "id": "c4e9bc9b8f014dea994306891cb22031",
+          "revision": "e02bfba29aef4d72b9498e93b305b262",
+          "symbol": "DEMO_EQUITY",
+          "published_at": "2026-10-06T11:37:40.899251+00:00"
+        },
+        "decision": {
+          "action": "exit",
+          "confidence": "1",
+          "rationale": "stop_loss",
+          "advisor": "fixed_risk_rule",
+          "expected_position_id": "c4e9bc9b8f014dea994306891cb22031"
+        },
+        "quote": {
+          "symbol": "DEMO_EQUITY",
+          "observed_at": "2026-10-06T11:37:40.899246+00:00",
+          "bid": "95",
+          "ask": "95.1",
+          "bid_size": "1000",
+          "ask_size": "1000",
+          "source": "synthetic_fixture",
+          "synthetic": true
+        },
+        "status": "filled",
+        "cash_before": "9500.00002199642395",
+        "fill": {
+          "timestamp": "2026-10-06T11:37:40.899251+00:00",
+          "instrument": "DEMO_EQUITY",
+          "direction": "sell",
+          "price": "94.9525",
+          "quantity": "4.987521",
+          "fee": "0.4735775877525",
+          "realized_pnl": "-26.89596783882855"
+        },
+        "reason": "Paper risk checks passed",
+        "cash_after": "9973.10403216117145",
+        "balance_change": "473.10401016474750",
+        "realized_pnl_total": "-26.89596783882855"
+      }
+    }
+  ],
+  "mock_messages": [
+    {
+      "method": "sendMessage",
+      "payload": {
+        "chat_id": 123,
+        "text": "New entries paused; automatic exits remain active."
+      }
+    },
+    {
+      "method": "sendMessage",
+      "payload": {
+        "chat_id": 123,
+        "text": "LOCAL PAPER DEMO_EQUITY: stop_loss; filled. Paper risk checks passed"
+      }
+    },
+    {
+      "method": "sendMessage",
+      "payload": {
+        "chat_id": 123,
+        "text": "LOCAL PAPER buy DEMO_EQUITY | quantity 4.987521 | price 100.15005 | 2026-10-06T11:37:40.898748+00:00"
+      }
+    },
+    {
+      "method": "sendMessage",
+      "payload": {
+        "chat_id": 123,
+        "text": "LOCAL PAPER sell DEMO_EQUITY | quantity 4.987521 | price 94.9525 | 2026-10-06T11:37:40.899251+00:00"
+      }
+    }
+  ],
+  "account": {
+    "cash": "9973.10403216117145",
+    "realized_pnl": "-26.89596783882855",
+    "positions": {},
+    "paused": true,
+    "risk": {
+      "initial_cash": "10000",
+      "position_cap": "0.10",
+      "exposure_cap": "0.30",
+      "realized_loss_cap": "0.02",
+      "minimum_confidence": "0.75",
+      "maximum_spread": "0.005",
+      "fee_rate": "0.001",
+      "slippage_rate": "0.0005",
+      "event_age_seconds": 900,
+      "quote_age_seconds": 15,
+      "symbols": [
+        "DEMO_EQUITY"
+      ]
+    }
+  }
+}

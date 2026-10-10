@@ -1,0 +1,245 @@
+{
+  "label": "SYNTHETIC DEMO \u2014 NOT LIVE OR BACKTEST PERFORMANCE",
+  "results": [
+    {
+      "mode": "LOCAL_PAPER",
+      "event_key": "d78084f4921a17709a78899e21b5d84214a651cfa5971621060cb5599f681555",
+      "processed_at": "2026-10-06T10:33:23.892205+00:00",
+      "event": {
+        "source": "synthetic_fixture",
+        "id": "2026-10-06T10:33:23.892205+00:00-entry",
+        "revision": "1",
+        "symbol": "DEMO_EQUITY",
+        "published_at": "2026-10-06T10:33:23.892205+00:00",
+        "headline": "SYNTHETIC: example company raises guidance",
+        "url": "https://example.com/synthetic-event",
+        "verified": true,
+        "synthetic": true
+      },
+      "decision": {
+        "action": "enter",
+        "confidence": "0.85",
+        "notional": "500",
+        "rationale": "Synthetic fixture decision; no AI model was called.",
+        "advisor": "fixture"
+      },
+      "quote": {
+        "symbol": "DEMO_EQUITY",
+        "observed_at": "2026-10-06T10:33:23.892205+00:00",
+        "bid": "99.90",
+        "ask": "100",
+        "bid_size": "1000",
+        "ask_size": "1000"
+      },
+      "status": "filled",
+      "cash_before": "10000",
+      "fill": {
+        "timestamp": "2026-10-06T10:33:23.892205+00:00",
+        "instrument": "DEMO_EQUITY",
+        "direction": "buy",
+        "price": "100.0500",
+        "quantity": "4.992508",
+        "fee": "0.4995004254000",
+        "realized_pnl": "0"
+      },
+      "reason": "Paper risk checks passed",
+      "cash_after": "9500.0000741746000",
+      "balance_change": "-499.9999258254000",
+      "realized_pnl_total": "0"
+    },
+    {
+      "status": "duplicate",
+      "event_key": "d78084f4921a17709a78899e21b5d84214a651cfa5971621060cb5599f681555"
+    },
+    {
+      "mode": "LOCAL_PAPER",
+      "event_key": "f87fd33b17f7b4116f170a7c2c42d91b4391212ecfc12ac9bbf7e0e2e5fd721d",
+      "processed_at": "2026-10-06T10:33:23.892205+00:00",
+      "event": {
+        "source": "synthetic_fixture",
+        "id": "2026-10-06T10:33:23.892205+00:00-hold",
+        "revision": "1",
+        "symbol": "DEMO_EQUITY",
+        "published_at": "2026-10-06T10:33:23.892205+00:00",
+        "headline": "SYNTHETIC: example company raises guidance",
+        "url": "https://example.com/synthetic-event",
+        "verified": true,
+        "synthetic": true
+      },
+      "decision": {
+        "action": "hold",
+        "confidence": "0.85",
+        "notional": "500",
+        "rationale": "Synthetic fixture decision; no AI model was called.",
+        "advisor": "fixture"
+      },
+      "quote": {
+        "symbol": "DEMO_EQUITY",
+        "observed_at": "2026-10-06T10:33:23.892205+00:00",
+        "bid": "101",
+        "ask": "101.1",
+        "bid_size": "1000",
+        "ask_size": "1000"
+      },
+      "status": "no_trade",
+      "cash_before": "9500.0000741746000",
+      "fill": null,
+      "reason": "Synthetic fixture decision; no AI model was called.",
+      "cash_after": "9500.0000741746000",
+      "balance_change": "0E-13",
+      "realized_pnl_total": "0"
+    },
+    {
+      "mode": "LOCAL_PAPER",
+      "event_key": "e15f2a5faa8caeeac00d9b31e11ce61ce7de5a4ef574c7760b9c40d0d02efaec",
+      "processed_at": "2026-10-06T10:33:23.892205+00:00",
+      "event": {
+        "source": "synthetic_fixture",
+        "id": "2026-10-06T10:33:23.892205+00:00-reduce",
+        "revision": "1",
+        "symbol": "DEMO_EQUITY",
+        "published_at": "2026-10-06T10:33:23.892205+00:00",
+        "headline": "SYNTHETIC: example company raises guidance",
+        "url": "https://example.com/synthetic-event",
+        "verified": true,
+        "synthetic": true
+      },
+      "decision": {
+        "action": "reduce",
+        "confidence": "0.85",
+        "notional": "500",
+        "rationale": "Synthetic fixture decision; no AI model was called.",
+        "advisor": "fixture",
+        "fraction": "0.5"
+      },
+      "quote": {
+        "symbol": "DEMO_EQUITY",
+        "observed_at": "2026-10-06T10:33:23.892205+00:00",
+        "bid": "102",
+        "ask": "102.1",
+        "bid_size": "1000",
+        "ask_size": "1000"
+      },
+      "status": "filled",
+      "cash_before": "9500.0000741746000",
+      "fill": {
+        "timestamp": "2026-10-06T10:33:23.892205+00:00",
+        "instrument": "DEMO_EQUITY",
+        "direction": "sell",
+        "price": "101.9490",
+        "quantity": "2.496254",
+        "fee": "0.2544905990460",
+        "realized_pnl": "4.2361455342540"
+      },
+      "reason": "Paper risk checks passed",
+      "cash_after": "9754.2361826215540",
+      "balance_change": "254.2361084469540",
+      "realized_pnl_total": "4.2361455342540"
+    },
+    {
+      "mode": "LOCAL_PAPER",
+      "event_key": "17764938acee6833e452458656bb9f6c254753492a773e3cb8bd3ad1f7202b10",
+      "processed_at": "2026-10-06T10:33:23.892205+00:00",
+      "event": {
+        "source": "synthetic_fixture",
+        "id": "2026-10-06T10:33:23.892205+00:00-exit",
+        "revision": "1",
+        "symbol": "DEMO_EQUITY",
+        "published_at": "2026-10-06T10:33:23.892205+00:00",
+        "headline": "SYNTHETIC: example company raises guidance",
+        "url": "https://example.com/synthetic-event",
+        "verified": true,
+        "synthetic": true
+      },
+      "decision": {
+        "action": "exit",
+        "confidence": "0.85",
+        "notional": "500",
+        "rationale": "Synthetic fixture decision; no AI model was called.",
+        "advisor": "fixture"
+      },
+      "quote": {
+        "symbol": "DEMO_EQUITY",
+        "observed_at": "2026-10-06T10:33:23.892205+00:00",
+        "bid": "103",
+        "ask": "103.1",
+        "bid_size": "1000",
+        "ask_size": "1000"
+      },
+      "status": "filled",
+      "cash_before": "9754.2361826215540",
+      "fill": {
+        "timestamp": "2026-10-06T10:33:23.892205+00:00",
+        "instrument": "DEMO_EQUITY",
+        "direction": "sell",
+        "price": "102.9485",
+        "quantity": "2.496254",
+        "fee": "0.2569856049190",
+        "realized_pnl": "6.7286564013810"
+      },
+      "reason": "Paper risk checks passed",
+      "cash_after": "10010.9648019356350",
+      "balance_change": "256.7286193140810",
+      "realized_pnl_total": "10.9648019356350"
+    },
+    {
+      "mode": "LOCAL_PAPER",
+      "event_key": "78caf1050a9f236c95748b424b7670a9c815403bd59c7b7c354eea524549e1a2",
+      "processed_at": "2026-10-06T10:33:23.892205+00:00",
+      "event": {
+        "source": "synthetic_fixture",
+        "id": "2026-10-06T10:33:23.892205+00:00-stale",
+        "revision": "1",
+        "symbol": "DEMO_EQUITY",
+        "published_at": "2026-10-06T09:33:23.892205+00:00",
+        "headline": "SYNTHETIC: example company raises guidance",
+        "url": "https://example.com/synthetic-event",
+        "verified": true,
+        "synthetic": true
+      },
+      "decision": {
+        "action": "enter",
+        "confidence": "0.85",
+        "notional": "500",
+        "rationale": "Synthetic fixture decision; no AI model was called.",
+        "advisor": "fixture"
+      },
+      "quote": {
+        "symbol": "DEMO_EQUITY",
+        "observed_at": "2026-10-06T10:33:23.892205+00:00",
+        "bid": "99.90",
+        "ask": "100",
+        "bid_size": "1000",
+        "ask_size": "1000"
+      },
+      "status": "rejected",
+      "cash_before": "10010.9648019356350",
+      "fill": null,
+      "reason": "Stale or future event",
+      "cash_after": "10010.9648019356350",
+      "balance_change": "0E-13",
+      "realized_pnl_total": "10.9648019356350"
+    }
+  ],
+  "account": {
+    "cash": "10010.9648019356350",
+    "realized_pnl": "10.9648019356350",
+    "positions": {},
+    "paused": false,
+    "risk": {
+      "initial_cash": "10000",
+      "position_cap": "0.10",
+      "exposure_cap": "0.30",
+      "realized_loss_cap": "0.02",
+      "minimum_confidence": "0.75",
+      "maximum_spread": "0.005",
+      "fee_rate": "0.001",
+      "slippage_rate": "0.0005",
+      "event_age_seconds": 900,
+      "quote_age_seconds": 15,
+      "symbols": [
+        "DEMO_EQUITY"
+      ]
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "label": "LOCAL PAPER TEST: SYNTHETIC DECISIONS, LIVE BITGET QUOTES. NO EXCHANGE ORDERS.",
+  "results": [
+    {
+      "mode": "LOCAL_PAPER",
+      "event_key": "d92c011e63cb3a1e5ebc9bba1edb04401f13d7072a5f2bb5fc3a3de213634d33",
+      "processed_at": "2026-10-06T11:04:30.599952+00:00",
+      "event": {
+        "source": "synthetic_integration_check",
+        "id": "live-smoke-enter-2026-10-06T11:04:18.612871+00:00",
+        "revision": "1",
+        "symbol": "RNVDAUSDT",
+        "published_at": "2026-10-06T11:04:18.612871+00:00",
+        "verified": true,
+        "url": "https://example.com/synthetic-test",
+        "synthetic": true,
+        "headline": "Synthetic connectivity test, not real investment news"
+      },
+      "decision": {
+        "action": "enter",
+        "confidence": "0.9",
+        "notional": "50",
+        "rationale": "Synthetic integration-test decision, no AI model called.",
+        "advisor": "fixture"
+      },
+      "quote": {
+        "symbol": "RNVDAUSDT",
+        "observed_at": "2026-10-06T11:04:29.689000+00:00",
+        "received_at": "2026-10-06T11:04:30.599720+00:00",
+        "bid": "241.05",
+        "ask": "241.1",
+        "bid_size": "254",
+        "ask_size": "415",
+        "source": "bitget_public_ticker",
+        "synthetic": false,
+        "liquidity_basis": "reported_best_bid_ask_only",
+        "category": "SPOT",
+        "instrument_limits": {
+          "minOrderQty": "0.0001",
+          "maxOrderQty": "0",
+          "minOrderAmount": "10",
+          "quantityPrecision": 4
+        },
+        "instrument_status": "online"
+      },
+      "status": "filled",
+      "cash_before": "10000",
+      "fill": {
+        "timestamp": "2026-10-06T11:04:30.599952+00:00",
+        "instrument": "RNVDAUSDT",
+        "direction": "buy",
+        "price": "241.22055",
+        "quantity": "0.2070",
+        "fee": "0.049932653850",
+        "realized_pnl": "0"
+      },
+      "reason": "Paper risk checks passed",
+      "cash_after": "9950.017413496150",
+      "balance_change": "-49.982586503850",
+      "realized_pnl_total": "0"
+    },
+    {
+      "mode": "LOCAL_PAPER",
+      "event_key": "c509f454ca09707c1b4b8c2993c21d5479e183c1a8c4fc55383c3afad185867b",
+      "processed_at": "2026-10-06T11:04:45.812277+00:00",
+      "event": {
+        "source": "synthetic_integration_check",
+        "id": "live-smoke-exit-2026-10-06T11:04:30.600565+00:00",
+        "revision": "1",
+        "symbol": "RNVDAUSDT",
+        "published_at": "2026-10-06T11:04:30.600565+00:00",
+        "verified": true,
+        "url": "https://example.com/synthetic-test",
+        "synthetic": true,
+        "headline": "Synthetic connectivity test, not real investment news"
+      },
+      "decision": {
+        "action": "exit",
+        "confidence": "0.9",
+        "notional": "50",
+        "rationale": "Synthetic integration-test decision, no AI model called.",
+        "advisor": "fixture"
+      },
+      "quote": {
+        "symbol": "RNVDAUSDT",
+        "observed_at": "2026-10-06T11:04:44.528000+00:00",
+        "received_at": "2026-10-06T11:04:45.812171+00:00",
+        "bid": "241.05",
+        "ask": "241.09",
+        "bid_size": "274",
+        "ask_size": "300",
+        "source": "bitget_public_ticker",
+        "synthetic": false,
+        "liquidity_basis": "reported_best_bid_ask_only",
+        "category": "SPOT",
+        "instrument_limits": {
+          "minOrderQty": "0.0001",
+          "maxOrderQty": "0",
+          "minOrderAmount": "10",
+          "quantityPrecision": 4
+        },
+        "instrument_status": "online"
+      },
+      "status": "filled",
+      "cash_before": "9950.017413496150",
+      "fill": {
+        "timestamp": "2026-10-06T11:04:45.812277+00:00",
+        "instrument": "RNVDAUSDT",
+        "direction": "sell",
+        "price": "240.929475",
+        "quantity": "0.2070",
+        "fee": "0.0498724013250",
+        "realized_pnl": "-0.1600575801750"
+      },
+      "reason": "Paper risk checks passed",
+      "cash_after": "9999.8399424198250",
+      "balance_change": "49.8225289236750",
+      "realized_pnl_total": "-0.1600575801750"
+    }
+  ],
+  "account": {
+    "cash": "9999.8399424198250",
+    "realized_pnl": "-0.1600575801750",
+    "positions": {},
+    "paused": false,
+    "risk": {
+      "initial_cash": "10000",
+      "position_cap": "0.10",
+      "exposure_cap": "0.30",
+      "realized_loss_cap": "0.02",
+      "minimum_confidence": "0.75",
+      "maximum_spread": "0.005",
+      "fee_rate": "0.001",
+      "slippage_rate": "0.0005",
+      "event_age_seconds": 900,
+      "quote_age_seconds": 15,
+      "symbols": [
+        "RNVDAUSDT",
+        "RTSLAUSDT",
+        "RAAPLUSDT",
+        "RMSFTUSDT",
+        "RAMZNUSDT"
+      ]
+    }
+  }
+}

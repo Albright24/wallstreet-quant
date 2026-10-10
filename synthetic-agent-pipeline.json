@@ -1,0 +1,281 @@
+{
+  "label": "ALL INPUTS AND DECISIONS SYNTHETIC. NO AI/NEWS/API CALLS.",
+  "results": [
+    {
+      "run_key": "bf44a8f5638622deb093a594b52b6889ea72a82c86d6c827e4fdcb1e8c2691d6",
+      "event": {
+        "source": "synthetic_fixture",
+        "id": "2026-10-06T11:15:39.600114+00:00:enter",
+        "revision": "1",
+        "symbol": "DEMO_EQUITY",
+        "published_at": "2026-10-06T11:15:39.600114+00:00",
+        "headline": "Synthetic primary event 2026-10-06T11:15:39.600114+00:00",
+        "body": "Invented demonstration event",
+        "url": "https://example.com/fixture",
+        "verified": true,
+        "synthetic": true,
+        "verification": "synthetic fixture only",
+        "evidence": [
+          {
+            "id": "fixture",
+            "url": "https://example.com/fixture",
+            "text": "Invented demonstration event"
+          }
+        ]
+      },
+      "started_at": "2026-10-06T11:15:39.600209+00:00",
+      "status": "finished",
+      "decision": {
+        "action": "enter",
+        "confidence": 0.85,
+        "notional": 50,
+        "fraction": 0,
+        "rationale": "Synthetic fixture proposal; no AI model called",
+        "uncertainty": "This is a connectivity test, not a market forecast",
+        "evidence_ids": [
+          "fixture"
+        ],
+        "material_event": true,
+        "advisor": "synthetic_fixture",
+        "decision_started_at": "2026-10-06T11:15:39.600687+00:00"
+      },
+      "execution": {
+        "mode": "LOCAL_PAPER",
+        "event_key": "79e0a2fb32d1c2bc2bb5e9daeb3f9f2911f2f91eb755a3db96ebc4ab2a5efd52",
+        "processed_at": "2026-10-06T11:15:39.600750+00:00",
+        "event": {
+          "source": "synthetic_fixture",
+          "id": "2026-10-06T11:15:39.600114+00:00:enter:pipeline:DEMO_EQUITY",
+          "revision": "1",
+          "symbol": "DEMO_EQUITY",
+          "published_at": "2026-10-06T11:15:39.600114+00:00",
+          "headline": "Synthetic primary event 2026-10-06T11:15:39.600114+00:00",
+          "body": "Invented demonstration event",
+          "url": "https://example.com/fixture",
+          "verified": true,
+          "synthetic": true,
+          "verification": "synthetic fixture only",
+          "evidence": [
+            {
+              "id": "fixture",
+              "url": "https://example.com/fixture",
+              "text": "Invented demonstration event"
+            }
+          ]
+        },
+        "decision": {
+          "action": "enter",
+          "confidence": 0.85,
+          "notional": 50,
+          "fraction": 0,
+          "rationale": "Synthetic fixture proposal; no AI model called",
+          "uncertainty": "This is a connectivity test, not a market forecast",
+          "evidence_ids": [
+            "fixture"
+          ],
+          "material_event": true,
+          "advisor": "synthetic_fixture",
+          "decision_started_at": "2026-10-06T11:15:39.600687+00:00"
+        },
+        "quote": {
+          "symbol": "DEMO_EQUITY",
+          "observed_at": "2026-10-06T11:15:39.600744+00:00",
+          "bid": "100",
+          "ask": "100.1",
+          "bid_size": "1000",
+          "ask_size": "1000",
+          "source": "synthetic_fixture",
+          "synthetic": true
+        },
+        "status": "filled",
+        "cash_before": "10000",
+        "fill": {
+          "timestamp": "2026-10-06T11:15:39.600750+00:00",
+          "instrument": "DEMO_EQUITY",
+          "direction": "buy",
+          "price": "100.15005",
+          "quantity": "0.498752",
+          "fee": "0.04995003773760",
+          "realized_pnl": "0"
+        },
+        "reason": "Paper risk checks passed",
+        "cash_after": "9950.00001222466240",
+        "balance_change": "-49.99998777533760",
+        "realized_pnl_total": "0"
+      },
+      "finished_at": "2026-10-06T11:15:39.601015+00:00"
+    },
+    {
+      "status": "duplicate",
+      "run_key": "bf44a8f5638622deb093a594b52b6889ea72a82c86d6c827e4fdcb1e8c2691d6",
+      "model_called": false
+    },
+    {
+      "run_key": "67b4a68df40fe06df8994627351c9120a31f28579237644c642b737ee60ac1b9",
+      "event": {
+        "source": "synthetic_fixture",
+        "id": "2026-10-06T11:15:39.600114+00:00:secondary",
+        "revision": "1",
+        "symbol": "DEMO_EQUITY",
+        "published_at": "2026-10-06T11:15:39.600114+00:00",
+        "headline": "Synthetic secondary story 2026-10-06T11:15:39.600114+00:00",
+        "body": "Invented demonstration event",
+        "url": "https://example.com/fixture",
+        "verified": false,
+        "synthetic": true,
+        "verification": "synthetic fixture only",
+        "evidence": [
+          {
+            "id": "fixture",
+            "url": "https://example.com/fixture",
+            "text": "Invented demonstration event"
+          }
+        ]
+      },
+      "started_at": "2026-10-06T11:15:39.601206+00:00",
+      "status": "blocked",
+      "decision": {
+        "action": "exit",
+        "confidence": 0.85,
+        "notional": 50,
+        "fraction": 0,
+        "rationale": "Synthetic fixture proposal; no AI model called",
+        "uncertainty": "This is a connectivity test, not a market forecast",
+        "evidence_ids": [
+          "fixture"
+        ],
+        "material_event": true,
+        "advisor": "synthetic_fixture",
+        "decision_started_at": "2026-10-06T11:15:39.601300+00:00"
+      },
+      "execution": null,
+      "reason": "Secondary news lacks primary-source corroboration",
+      "finished_at": "2026-10-06T11:15:39.601348+00:00"
+    },
+    {
+      "run_key": "ce7eef7cdd3c7c2d4377f9699ca0ba6d6af7cf6486a8c0e83b2c82714cf4e6b7",
+      "event": {
+        "source": "synthetic_fixture",
+        "id": "2026-10-06T11:15:39.600114+00:00:exit",
+        "revision": "1",
+        "symbol": "DEMO_EQUITY",
+        "published_at": "2026-10-06T11:15:39.600114+00:00",
+        "headline": "Synthetic exit event 2026-10-06T11:15:39.600114+00:00",
+        "body": "Invented demonstration event",
+        "url": "https://example.com/fixture",
+        "verified": true,
+        "synthetic": true,
+        "verification": "synthetic fixture only",
+        "evidence": [
+          {
+            "id": "fixture",
+            "url": "https://example.com/fixture",
+            "text": "Invented demonstration event"
+          }
+        ]
+      },
+      "started_at": "2026-10-06T11:15:39.601372+00:00",
+      "status": "finished",
+      "decision": {
+        "action": "exit",
+        "confidence": 0.85,
+        "notional": 50,
+        "fraction": 0,
+        "rationale": "Synthetic fixture proposal; no AI model called",
+        "uncertainty": "This is a connectivity test, not a market forecast",
+        "evidence_ids": [
+          "fixture"
+        ],
+        "material_event": true,
+        "advisor": "synthetic_fixture",
+        "decision_started_at": "2026-10-06T11:15:39.601566+00:00"
+      },
+      "execution": {
+        "mode": "LOCAL_PAPER",
+        "event_key": "542f88146afc119f1f75eb69399fcdc60e933f275a0db26ee3dbcb240a13e433",
+        "processed_at": "2026-10-06T11:15:39.601598+00:00",
+        "event": {
+          "source": "synthetic_fixture",
+          "id": "2026-10-06T11:15:39.600114+00:00:exit:pipeline:DEMO_EQUITY",
+          "revision": "1",
+          "symbol": "DEMO_EQUITY",
+          "published_at": "2026-10-06T11:15:39.600114+00:00",
+          "headline": "Synthetic exit event 2026-10-06T11:15:39.600114+00:00",
+          "body": "Invented demonstration event",
+          "url": "https://example.com/fixture",
+          "verified": true,
+          "synthetic": true,
+          "verification": "synthetic fixture only",
+          "evidence": [
+            {
+              "id": "fixture",
+              "url": "https://example.com/fixture",
+              "text": "Invented demonstration event"
+            }
+          ]
+        },
+        "decision": {
+          "action": "exit",
+          "confidence": 0.85,
+          "notional": 50,
+          "fraction": 0,
+          "rationale": "Synthetic fixture proposal; no AI model called",
+          "uncertainty": "This is a connectivity test, not a market forecast",
+          "evidence_ids": [
+            "fixture"
+          ],
+          "material_event": true,
+          "advisor": "synthetic_fixture",
+          "decision_started_at": "2026-10-06T11:15:39.601566+00:00"
+        },
+        "quote": {
+          "symbol": "DEMO_EQUITY",
+          "observed_at": "2026-10-06T11:15:39.601594+00:00",
+          "bid": "100",
+          "ask": "100.1",
+          "bid_size": "1000",
+          "ask_size": "1000",
+          "source": "synthetic_fixture",
+          "synthetic": true
+        },
+        "status": "filled",
+        "cash_before": "9950.00001222466240",
+        "fill": {
+          "timestamp": "2026-10-06T11:15:39.601598+00:00",
+          "instrument": "DEMO_EQUITY",
+          "direction": "sell",
+          "price": "99.9500",
+          "quantity": "0.498752",
+          "fee": "0.0498502624000",
+          "realized_pnl": "-0.19957563773760"
+        },
+        "reason": "Paper risk checks passed",
+        "cash_after": "9999.80042436226240",
+        "balance_change": "49.80041213760000",
+        "realized_pnl_total": "-0.19957563773760"
+      },
+      "finished_at": "2026-10-06T11:15:39.601954+00:00"
+    }
+  ],
+  "account": {
+    "cash": "9999.80042436226240",
+    "realized_pnl": "-0.19957563773760",
+    "positions": {},
+    "paused": false,
+    "risk": {
+      "initial_cash": "10000",
+      "position_cap": "0.10",
+      "exposure_cap": "0.30",
+      "realized_loss_cap": "0.02",
+      "minimum_confidence": "0.75",
+      "maximum_spread": "0.005",
+      "fee_rate": "0.001",
+      "slippage_rate": "0.0005",
+      "event_age_seconds": 900,
+      "quote_age_seconds": 15,
+      "symbols": [
+        "DEMO_EQUITY"
+      ]
+    }
+  }
+}
