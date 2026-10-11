@@ -107,6 +107,9 @@ class OpenAIAdvisor:
         elif provider == "groq" and sys.platform == "win32":
             from .groq_windows import request as windows_request
             response = windows_request(payload, key)
+        elif provider == "groq":
+            from .groq_sdk import request as sdk_request
+            response = sdk_request(payload, key)
         else:
             try:
                 request = urllib.request.Request(endpoint,

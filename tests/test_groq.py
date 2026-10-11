@@ -23,14 +23,16 @@ class GroqTests(unittest.TestCase):
         return {"id": "test", "choices": [choice], "usage": {"total_tokens": 100}}
 
     def test_request_and_valid_result(self):
-        opener = MagicMock()
-        opener.open.return_value.__enter__.return_value.read.return_value = json.dumps(self.response()).encode()
-        with patch("urllib.request.build_opener", return_value=opener):
+        groq = MagicMock()
+        httpx = MagicMock()
+        client = groq.Groq.return_value.__enter__.return_value
+        client.chat.completions.create.return_value.model_dump.return_value = self.response()
+        with patch.dict('sys.modules', {'groq': groq, 'httpx': httpx}):
             result = OpenAIAdvisor().decide({"evidence": []}, {})
-        request = opener.open.call_args.args[0]
-        self.assertEqual(request.full_url, "https://api.groq.com/openai/v1/chat/completions")
-        self.assertEqual(request.get_header("Authorization"), "Bearer groq-test")
-        body = json.loads(request.data)
+        self.assertEqual(groq.Groq.call_args.kwargs['api_key'], 'groq-test')
+        self.assertEqual(groq.Groq.call_args.kwargs['max_retries'], 0)
+        self.assertFalse(httpx.Client.call_args.kwargs['follow_redirects'])
+        body = client.chat.completions.create.call_args.kwargs
         self.assertTrue(body["response_format"]["json_schema"]["strict"])
         self.assertNotIn("input", body)
         self.assertEqual(result["action"], "skip")
@@ -53,11 +55,17 @@ class GroqTests(unittest.TestCase):
     def test_key_isolation_and_no_retry(self):
         with patch.dict(os.environ, {"GROQ_API_KEY": "", "OPENAI_API_KEY": "other"}):
             self.assertEqual(provider_settings()[2], "")
-        opener = MagicMock()
-        opener.open.side_effect = HTTPError("https://api.groq.com", 429, "private", {}, None)
-        with patch("urllib.request.build_opener", return_value=opener), self.assertRaisesRegex(ValueError, "HTTP 429"):
+        class StatusError(Exception):
+            status_code = 429
+        groq = MagicMock()
+        groq.APIStatusError = StatusError
+        client = groq.Groq.return_value.__enter__.return_value
+        client.chat.completions.create.side_effect = StatusError('private provider text')
+        with patch.dict('sys.modules', {'groq': groq, 'httpx': MagicMock()}), self.assertRaisesRegex(ValueError, 'HTTP 429') as error:
             OpenAIAdvisor().decide({"evidence": []}, {})
-        self.assertEqual(opener.open.call_count, 1)
+        self.assertNotIn('private provider text', str(error.exception))
+        self.assertEqual(client.chat.completions.create.call_count, 1)
+
 
 
 if __name__ == "__main__":

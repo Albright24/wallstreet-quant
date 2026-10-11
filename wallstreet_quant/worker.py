@@ -10,7 +10,7 @@ from .core import Engine
 from .bitget import BitgetPublic
 from .monitor import Monitor, RuntimeStore
 from .news import SECNews, SYMBOLS
-from .advisor import OpenAIAdvisor
+from .advisor import OpenAIAdvisor, provider_settings
 from .pipeline import Pipeline
 from .telegram import Telegram
 
@@ -78,8 +78,13 @@ def run_worker(engine, policy, cycles=0, interval=5, news_interval=60,
     if not path:
         raise ValueError("Worker requires a persistent file database")
     tickers = [t for t, s in SYMBOLS.items() if s in engine.risk.symbols]
-    if enable_news and (not tickers or not all(os.getenv(k) for k in ("SEC_USER_AGENT", "OPENAI_API_KEY", "WQ_MODEL"))):
-        raise ValueError("News worker requires configured symbols, SEC contact and runtime model credentials")
+    collector_db = os.getenv("WQ_TELEGRAM_NEWS_DB", "").strip()
+    if collector_db and not enable_news:
+        raise ValueError("Telegram news requires --enable-news")
+    if enable_news:
+        _, _, model_key = provider_settings()
+        if not tickers or not model_key.strip() or not all(os.getenv(k, '').strip() for k in ("SEC_USER_AGENT", "WQ_MODEL")):
+            raise ValueError("News worker requires configured symbols, SEC contact and runtime model credentials")
     if enable_telegram:
         Telegram(engine)  # Validate locally before starting any worker tasks.
     stop = threading.Event()
@@ -93,6 +98,7 @@ def run_worker(engine, policy, cycles=0, interval=5, news_interval=60,
         monitor = Monitor(engine, BitgetPublic(), policy)
         pool = ThreadPoolExecutor(max_workers=2)
         pending = {}
+        next_telegram_news = 0
         next_news = 0
         completed = 0
         store.put("worker_state", {"status": "running", "pid": os.getpid()})
@@ -120,6 +126,11 @@ def run_worker(engine, policy, cycles=0, interval=5, news_interval=60,
                     pending["news"] = pool.submit(news_cycle, path, engine.risk, tickers[index], daily_calls, stop)
                     store.put("news_ticker_index", index+1)
                     next_news = time.monotonic() + news_interval
+                if collector_db and "telegram_news" not in pending and time.monotonic() >= next_telegram_news:
+                    from .telegram_bridge import cycle as telegram_news_cycle
+                    pending["telegram_news"] = pool.submit(telegram_news_cycle, path, engine.risk,
+                                                           collector_db, daily_calls, stop)
+                    next_telegram_news = time.monotonic() + news_interval
                 if enable_telegram and "telegram" not in pending:
                     pending["telegram"] = pool.submit(telegram_cycle, path, engine.risk)
                 completed += 1
